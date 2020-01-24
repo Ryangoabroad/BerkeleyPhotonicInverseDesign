@@ -41,10 +41,10 @@ if(~first & newRun) {
     load("Forward_111_iter0.fsp");
 }
 
-feval('LumericalMethods/GetMeritDataLum.lsf'); # Get merit data from Lumerical
+feval('./LumericalMethods/GetMeritDataLum.lsf'); # Get merit data from Lumerical
 
 EAflag = 0;
-feval('LumericalMethods/GetVelDataLum.lsf');  # Get velocity data from Lumerical
+feval('./LumericalMethods/GetVelDataLum.lsf');  # Get velocity data from Lumerical
 
 matlab("done=1; lumError='';");
 matlab("save('runForwardSolves.mat','done','lumError','iter','merit_E','merit_H','merit_pos','merit_eps','merit_eps_pos','normParam','EField','pos_E','epsReal','pos_eps','-v7.3');");

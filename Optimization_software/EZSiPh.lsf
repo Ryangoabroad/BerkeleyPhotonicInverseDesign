@@ -6,7 +6,7 @@ load(baseFile);
 save("modeImport.fsp");
 switchtolayout;
 
-select(velocityMon);# set monitor
+select(velocityMon);
 vel_x_span=get('x span');
 vel_y_span=get('y span');
 vel_z_span=get('z span');
@@ -15,7 +15,7 @@ vel_y=get('y');
 vel_z=get('z');
 mon_type=get('monitor type');
 
-addindex; #set refractive index
+addindex;
 set('monitor type',mon_type);
 set("name","Index");
 set('x',vel_x);
@@ -28,7 +28,7 @@ set('z span',vel_z_span);
 
 
 
-addmesh;  #set mesh
+addmesh;
 set("name","outsidemesh");
 set('x',vel_x);
 set('x span',vel_x_span+2*meshsize);
@@ -40,7 +40,7 @@ set('dx',meshsize);
 set('dy',meshsize);
 set('dz',meshsize);
 
-select('Source'); # set source
+select('Source');
 wavelength_start=get('wavelength start');
 wavelength_stop=get('wavelength stop');
 
@@ -111,7 +111,7 @@ if(queueName == 'local') {
 }
 select('FDTD');
 dim=get('dimension');
-#modeExtract;
+#modeExtractor;
 
 index_x=getdata("Index",'x');
 index_y=getdata("Index",'y');

@@ -6,7 +6,7 @@ freq=freq(1);
 
 done=0;
 save('autoImportGeometry.mat','done','eps_','freq','baseFile','velocityMon','queueName');
-runLumericalScript(lumerical, 'autoImportGeometry.mat', 'LumericalMethods/autoImportGeometry.lsf');
+runLumericalScript(lumerical, 'autoImportGeometry.mat', './LumericalMethods/autoImportGeometry.lsf');
 
 load('autoImportGeometry.mat','eps_','epsGrid','x','y','vel_x_min','vel_x_span','vel_y_min','vel_y_span','vel_z','vel_z_span');
 

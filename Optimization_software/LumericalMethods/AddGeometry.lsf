@@ -29,7 +29,7 @@ if(shapeType == 'Extruded') {
 		geo_zspan = geoData.geo_zspan;
 	");
 	matlabget(geo_n, geo_x, geo_y, geo_z, xArr, yArr, blockSizeArr, geo_nClad, geo_mat, geo_matClad, geo_xspan, geo_yspan, geo_zspan);
-	feval('LumericalMethods/AddBinaryImportLum.lsf');
+	feval('./LumericalMethods/AddBinaryImportLum.lsf');
 	matlab("clear geo_n geo_x geo_y geo_z");
     } else {
         matlab("
@@ -39,7 +39,7 @@ if(shapeType == 'Extruded') {
 		geo_z = geoData.geo_z;
         ");
         matlabget( geo_n, geo_x, geo_y, geo_z);
-        feval('LumericalMethods/AddFreeFormLum.lsf');
+        feval('./LumericalMethods/AddFreeFormLum.lsf');
     }
 } 
 
@@ -58,7 +58,7 @@ if(shapeType == 'Extruded') {
 #       		geo_matClad = geoData.geo_matClad;
 #	");
 #	matlabget(geo_surface, geo_x, geo_xspan, geo_y, geo_yspan, geo_z, geo_zspan, geo_n, geo_mat, geo_nClad, geo_matClad);
-#	feval('LumericalMethods/AddSurfaceLum.lsf');
+#	feval('./LumericalMethods/AddSurfaceLum.lsf');
 #	matlab("clear geo_surface geo_x geo_xspan geo_y geo_yspan geo_z geo_zspan geo_n geo_mat geo_nClad geo_matClad");
 #}
 
@@ -75,7 +75,7 @@ if(shapeType == 'Extruded') {
 #		geo_zspan = geoData.geo_zspan;
 #	");
 #	matlabget( geo_n, geo_x, geo_y, geo_z);
-#	feval('LumericalMethods/AddFreeFormLum.lsf');
+#	feval('./LumericalMethods/AddFreeFormLum.lsf');
 #} 
 
 #if(shapeType == 'LevelSet') {
@@ -85,7 +85,7 @@ if(shapeType == 'Extruded') {
 #		startEnd = geoData.startEnd;
 #	");
 #	matlabget(xy, startEnd, epsLS);
-#	feval('LumericalMethods/AddLSPolyLum.lsf');
+#	feval('./LumericalMethods/AddLSPolyLum.lsf');
 #	matlab("clear xy startEnd epsLS");
 #}
 
@@ -95,7 +95,7 @@ if(shapeType == 'Extruded') {
 #		numShapes = size(dataMatrix,1);
 #	");
 #	matlabget(numShapes);
-#	feval('LumericalMethods/AddPolyLum.lsf'); 
+#	feval('./LumericalMethods/AddPolyLum.lsf'); 
 #	matlab("clear dataMatrix numShapes");
 #}
 
